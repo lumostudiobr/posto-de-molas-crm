@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 body {
@@ -27,8 +31,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
 }
-
-/* Tailwind styles are handled via CDN in index.html */
 
 /* Utility to hide horizontal scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
