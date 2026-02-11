@@ -34,7 +34,7 @@ export const searchLeads = async (sector: string, city: string, country: string,
             `;
 
             const response = await ai.models.generateContent({
-                model: "gemini-2.0-flash",
+                model: "gemini-1.5-flash",
                 contents: prompt,
                 config: {
                     tools: [{ googleMaps: {} }],
@@ -58,7 +58,7 @@ export const searchLeads = async (sector: string, city: string, country: string,
         `;
 
         const fallbackResponse = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
+            model: "gemini-1.5-flash",
             contents: fallbackPrompt,
             config: {
                 responseMimeType: "application/json"
@@ -120,7 +120,7 @@ export const generateLeadMessage = async (lead: Lead): Promise<string> => {
             Tom: Profissional mas próximo. Máximo 30 palavras.
         `;
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
+            model: "gemini-1.5-flash",
             contents: prompt
         });
         return response.text || `Olá ${lead.companyName}, somos da RR Posto de Molas e gostaríamos de apresentar nossos serviços.`;
@@ -198,7 +198,7 @@ export const sendChatMessage = async (
 
     try {
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
+            model: "gemini-1.5-flash",
             contents: contents,
             config: {
                 systemInstruction: finalInstruction,
